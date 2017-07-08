@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import ToneAnalyzerV3
 import SpeechToTextV1
 
 class MainViewController: UIViewController {
 
     var isRecording = false
-    var recordedText = ""
+    var recordedText: String?
     
     var speechToText: SpeechToText?
-    var toneAnalyzer: ToneAnalyzer?
-
     
     @IBAction func toggleRecording(_ sender: UIButton) {
         if isRecording {
@@ -37,6 +34,7 @@ class MainViewController: UIViewController {
                 // copy recorded text to new view controller
                 let entryViewController = segue.destination as! EntryViewController
                 entryViewController.recordedText = self.recordedText
+                entryViewController.tones = self.tones
             }
         }
     }
@@ -85,4 +83,6 @@ extension MainViewController {
     func stopListening() {
         speechToText?.stopRecognizeMicrophone()
     }
+    
+    
 }

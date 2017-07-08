@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ToneAnalyzerV3
 
 class EntryViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
@@ -37,4 +38,22 @@ class EntryViewController: UIViewController {
     }
     */
 
+}
+
+
+extension EntryViewController {
+    
+    func getTones(recordedText: String) ->  [[String : Double]] {
+        var tones = [[String : Double]]()
+        let toneAnalyzer = ToneAnalyzer(username: Constants.ToneAnalyzer.username, password: Constants.ToneAnalyzer.password, version: Constants.ToneAnalyzer.version)
+        let failure = { (error: Error) in print(error) }
+        toneAnalyzer.getTone(ofText: recordedText, failure: failure) { result in
+            for type in 0..<result.documentTone.count {
+                for tone in result.documentTone[type].tones {
+                    tones[type][tone.name] = tone.score
+                }
+            }
+        }
+        return tones
+    }
 }
