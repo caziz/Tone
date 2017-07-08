@@ -17,7 +17,7 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //textView.text = "hello"
+        textView.text = recordedText
         print(textView.text)
     }
 
