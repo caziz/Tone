@@ -21,6 +21,7 @@
 		90A1D3AA1F116F73003F4698 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1D3A91F116F73003F4698 /* Entry.swift */; };
 		90A1D3AD1F1171D0003F4698 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1D3AC1F1171D0003F4698 /* CoreDataHelper.swift */; };
 		90A1D3B61F11A35C003F4698 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A1D3B41F11A249003F4698 /* JTAppleCalendar.framework */; };
+		90A1D3B91F11A645003F4698 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A1D3B71F11A645003F4698 /* Calendar.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		90A1D3A91F116F73003F4698 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		90A1D3AC1F1171D0003F4698 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		90A1D3B41F11A249003F4698 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTAppleCalendar.framework; path = Carthage/Build/iOS/JTAppleCalendar.framework; sourceTree = "<group>"; };
+		90A1D3B81F11A645003F4698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0AE0BE1F1157A200FF3BE3 /* Main.storyboard */,
+				90A1D3B71F11A645003F4698 /* Calendar.storyboard */,
 				5A0AE0C61F1157A200FF3BE3 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A1D3B91F11A645003F4698 /* Calendar.storyboard in Resources */,
 				5A0AE0C81F1157A200FF3BE3 /* LaunchScreen.storyboard in Resources */,
 				5A0AE0C51F1157A200FF3BE3 /* Assets.xcassets in Resources */,
 				5A0AE0C01F1157A200FF3BE3 /* Main.storyboard in Resources */,
@@ -288,6 +292,14 @@
 				5A0AE0C71F1157A200FF3BE3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		90A1D3B71F11A645003F4698 /* Calendar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90A1D3B81F11A645003F4698 /* Base */,
+			);
+			name = Calendar.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
