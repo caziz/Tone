@@ -35,14 +35,17 @@
                             <constraint firstItem="bRN-YM-h2m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qyA-Sv-3Tj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="IwE-YX-b08" kind="show" identifier="showEntryView" id="0Pd-tu-aLp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="sgm-aP-FqP">
             <objects>
-                <viewController id="IwE-YX-b08" sceneMemberID="viewController">
+                <viewController id="IwE-YX-b08" customClass="EntryViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nln-9o-8sv"/>
                         <viewControllerLayoutGuide type="bottom" id="IEo-4H-QRS"/>
@@ -55,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szO-l3-ADu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="37"/>
+            <point key="canvasLocation" x="1065" y="137"/>
         </scene>
     </scenes>
 </document>

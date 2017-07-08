@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  EntryViewController.swift
 //  Tone
 //
 //  Created by Christopher Aziz on 7/8/17.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class EntryViewController: UIViewController {
 
-    @IBAction func toggleRecording(_ sender: UIButton) {
-        performSegue(withIdentifier: "showEntryView", sender: sender)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +25,7 @@ class MainViewController: UIViewController {
     /*
     // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
