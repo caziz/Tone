@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
                 // copy recorded text to new view controller
                 let entryViewController = segue.destination as! EntryViewController
                 entryViewController.recordedText = self.recordedText
-                entryViewController.tones = self.tones
+
             }
         }
     }
