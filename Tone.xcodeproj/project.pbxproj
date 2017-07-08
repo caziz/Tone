@@ -14,10 +14,10 @@
 		5A0AE0C81F1157A200FF3BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0AE0C61F1157A200FF3BE3 /* LaunchScreen.storyboard */; };
 		5A0AE0D21F1158FD00FF3BE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AE0D11F1158FD00FF3BE3 /* MainViewController.swift */; };
 		5A8E6B081F115B6100E9D805 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B071F115B6100E9D805 /* Constants.swift */; };
-		5A8E6B0B1F115CB900E9D805 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B0A1F115CB900E9D805 /* TextToSpeechV1.framework */; };
 		5A8E6B0D1F115CD500E9D805 /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B0C1F115CD500E9D805 /* ToneAnalyzerV3.framework */; };
 		5A8E6B0F1F115CE800E9D805 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B0E1F115CE800E9D805 /* RestKit.framework */; };
 		5A8E6B121F115E1300E9D805 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B111F115E1300E9D805 /* EntryViewController.swift */; };
+		5A8E6B141F11710C00E9D805 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B131F11710C00E9D805 /* SpeechToTextV1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,10 @@
 		5A0AE0C91F1157A200FF3BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0AE0D11F1158FD00FF3BE3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A8E6B071F115B6100E9D805 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5A8E6B0A1F115CB900E9D805 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		5A8E6B0C1F115CD500E9D805 /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
 		5A8E6B0E1F115CE800E9D805 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 		5A8E6B111F115E1300E9D805 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		5A8E6B131F11710C00E9D805 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8E6B141F11710C00E9D805 /* SpeechToTextV1.framework in Frameworks */,
 				5A8E6B0F1F115CE800E9D805 /* RestKit.framework in Frameworks */,
 				5A8E6B0D1F115CD500E9D805 /* ToneAnalyzerV3.framework in Frameworks */,
-				5A8E6B0B1F115CB900E9D805 /* TextToSpeechV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,9 +86,9 @@
 		5A8E6B091F115CB900E9D805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A8E6B131F11710C00E9D805 /* SpeechToTextV1.framework */,
 				5A8E6B0E1F115CE800E9D805 /* RestKit.framework */,
 				5A8E6B0C1F115CD500E9D805 /* ToneAnalyzerV3.framework */,
-				5A8E6B0A1F115CB900E9D805 /* TextToSpeechV1.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
 			);
 			outputPaths = (
 			);

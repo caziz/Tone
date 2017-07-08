@@ -9,11 +9,16 @@
 import UIKit
 
 class EntryViewController: UIViewController {
+    @IBOutlet weak var textView: UITextView!
 
+    var recordedText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textView.text = recordedText
+        print(textView.text)
     }
 
     override func didReceiveMemoryWarning() {
