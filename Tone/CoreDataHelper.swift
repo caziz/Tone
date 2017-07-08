@@ -30,7 +30,7 @@ class CoreDataHelper {
     
     static func deleteEntry(note: Entry) {
         managedContext.delete(note)
-        saveNote()
+        saveEntry()
     }
     
     static func retrieveAllEntries() -> [Entry] {
