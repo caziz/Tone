@@ -37,7 +37,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="IwE-YX-b08" kind="show" identifier="" id="0Pd-tu-aLp"/>
+                        <segue destination="IwE-YX-b08" kind="show" identifier="showEntryView" id="0Pd-tu-aLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,10 +71,13 @@
                             <constraint firstItem="IEo-4H-QRS" firstAttribute="top" secondItem="SLg-WH-oFI" secondAttribute="bottom" id="eO8-Jl-Np9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="SLg-WH-oFI" id="BCf-Qi-zIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szO-l3-ADu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="137"/>
+            <point key="canvasLocation" x="919" y="37"/>
         </scene>
     </scenes>
 </document>

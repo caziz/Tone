@@ -7,29 +7,36 @@
 //
 
 import UIKit
+import ToneAnalyzerV3
+import SpeechToTextV1
 
 class MainViewController: UIViewController {
 
     var isRecording = false
+    var recordedText = ""
+    
+    var speechToText: SpeechToText?
+    var toneAnalyzer: ToneAnalyzer?
+
     
     @IBAction func toggleRecording(_ sender: UIButton) {
         if isRecording {
             isRecording = false
-            // stop listening
-            // segue to entry view
+            stopListening()
+            // show entry
+            performSegue(withIdentifier: Constants.Segue.showEntryView, sender: sender)
         } else {
             isRecording = true
-            // start listening
+            startListening()
         }
-        
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == Constants.Segue.showEntryView {
-                // copy recorded text to new
+                // copy recorded text to new view controller
+                let entryViewController = segue.destination as! EntryViewController
+                entryViewController.recordedText = self.recordedText
             }
         }
     }
@@ -55,4 +62,27 @@ class MainViewController: UIViewController {
     }
     */
 
+}
+
+
+extension MainViewController {
+    
+    // constantly updates recordedText with speech
+    func startListening() {
+        speechToText = SpeechToText(username: Constants.SpeechToText.username, password: Constants.SpeechToText.password)
+        var settings = RecognitionSettings(contentType: .opus)
+        settings.continuous = true
+        settings.interimResults = true
+        let failure = { (error: Error) in print(error) }
+        speechToText?.recognizeMicrophone(settings: settings, failure: failure) { results in
+            self.recordedText = results.bestTranscript
+            print(results.bestTranscript)
+        }
+
+    }
+    
+    // resets recorder
+    func stopListening() {
+        speechToText?.stopRecognizeMicrophone()
+    }
 }
