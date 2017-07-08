@@ -15,9 +15,9 @@ class CoreDataHelper {
     static let managedContext = persistentContainer.viewContext
     
     static func createEntry() -> Entry {
-        let note = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedContext) as! Entry
+        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedContext) as! Entry
         
-        return note
+        return entry
     }
     
     static func saveEntry() {
@@ -28,8 +28,8 @@ class CoreDataHelper {
         }
     }
     
-    static func deleteEntry(note: Entry) {
-        managedContext.delete(note)
+    static func deleteEntry(entry: Entry) {
+        managedContext.delete(entry)
         saveEntry()
     }
     
