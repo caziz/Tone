@@ -10,8 +10,28 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var isRecording = false
+    
     @IBAction func toggleRecording(_ sender: UIButton) {
-        performSegue(withIdentifier: "showEntryView", sender: sender)
+        if isRecording {
+            isRecording = false
+            // stop listening
+            // segue to entry view
+        } else {
+            isRecording = true
+            // start listening
+        }
+        
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == Constants.Segue.showEntryView {
+                // copy recorded text to new
+            }
+        }
     }
     
     override func viewDidLoad() {
