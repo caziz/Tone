@@ -124,7 +124,7 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ZCR-tS-SSy" firstAttribute="height" secondItem="LzJ-50-h1p" secondAttribute="height" multiplier="2/3" id="a45-h0-Sqr"/>
                                             <constraint firstItem="ZCR-tS-SSy" firstAttribute="centerX" secondItem="LzJ-50-h1p" secondAttribute="centerX" id="erz-sm-xOg"/>
@@ -153,7 +153,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="innerCircle" destination="LzJ-50-h1p" id="dUy-Mz-MVH"/>
+                        <outlet property="innerCircle" destination="ZCR-tS-SSy" id="UM2-Oh-Z47"/>
                         <outlet property="middleCircle" destination="LzJ-50-h1p" id="E1j-9v-UfR"/>
                         <outlet property="outerCircle" destination="ejn-1M-PaK" id="wAO-zy-4La"/>
                     </connections>

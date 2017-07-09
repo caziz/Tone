@@ -19,19 +19,32 @@ class ResultsViewController: UIViewController {
         Entry.tonesReceived = false
         let backgroundTrackColor = UIColor(white: 0.15, alpha: 1.0)
         outerCircle.arcBackgroundColor = backgroundTrackColor
-        outerCircle.arcWidth = 35.0
+        outerCircle.arcWidth = 20.0
+        outerCircle.arcColor = UIColor.yellow
         
-        middleCircle.arcWidth = 25.0
-        middleCircle.arcColor = UIColor.white
+        middleCircle.arcWidth = 20.0
+        middleCircle.arcColor = UIColor.blue
         middleCircle.arcBackgroundColor = backgroundTrackColor
         
         innerCircle.arcColor = UIColor.red
         innerCircle.arcWidth = 20.0
         innerCircle.arcBackgroundColor = backgroundTrackColor
         
-        outerCircle.endArc = CGFloat(Entry.joy)
+        outerCircle.endArc = CGFloat(Entry.analytical)
         middleCircle.endArc = CGFloat(Entry.disgust)
         innerCircle.endArc = CGFloat(Entry.agreeableness)
+        
+        print("Entry analytical: \(Entry.analytical)")
+        print("Entry agreeableness: \(Entry.agreeableness)")
+        print("Entry Anger: \(Entry.anger)")
+        print("Entry Confident: \(Entry.confident)")
+        print("Entry Conscientiousness: \(Entry.conscientiousness)")
+        print("Entry Disgust: \(Entry.disgust)")
+        print("Entry Emotional Range: \(Entry.emotionalRange)")
+        print("Entry Extraversion: \(Entry.extraversion)")
+        print("Entry Fear: \(Entry.fear)")
+        print("Entry joy: \(Entry.joy)")
+        print("Entry Openness: \(Entry.openness)")
 
     }
 
