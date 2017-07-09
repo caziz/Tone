@@ -7,11 +7,10 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record-->
+        <!--Tap to Begin Recording-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +41,7 @@
                             <constraint firstItem="fyc-Jh-3xq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vth-av-oXf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Record" id="eYD-79-K1d"/>
+                    <navigationItem key="navigationItem" title="Tap to Begin Recording" id="eYD-79-K1d"/>
                     <connections>
                         <outlet property="recordButton" destination="iUl-ec-UJh" id="wjg-KX-uZG"/>
                         <segue destination="IwE-YX-b08" kind="show" identifier="showEntryView" id="0Pd-tu-aLp"/>
@@ -52,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="1212" y="-546.47676161919048"/>
         </scene>
-        <!--Text-->
+        <!--Edit Entry-->
         <scene sceneID="sgm-aP-FqP">
             <objects>
                 <viewController id="IwE-YX-b08" customClass="EntryViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,7 +79,7 @@
                             <constraint firstItem="IEo-4H-QRS" firstAttribute="top" secondItem="SLg-WH-oFI" secondAttribute="bottom" id="eO8-Jl-Np9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Text" id="mMj-ud-4il">
+                    <navigationItem key="navigationItem" title="Edit Entry" id="mMj-ud-4il">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mNj-BQ-XQk">
                             <connections>
                                 <segue destination="a8Y-CD-gVb" kind="unwind" unwindAction="unwindToMainView:" id="D4Y-aG-KiM"/>
@@ -102,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="2154" y="-546"/>
         </scene>
-        <!--Results View Controller-->
+        <!--Results-->
         <scene sceneID="P5Z-d8-BEU">
             <objects>
                 <viewController id="Mec-Ca-KPR" customClass="ResultsViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,79 +113,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-1M-PaK" userLabel="Outer Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="svD-Sf-WpG">
+                                <rect key="frame" x="16" y="94" width="343" height="573"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzJ-50-h1p" userLabel="Middle Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="50" width="200" height="200"/>
+                                        <rect key="frame" x="56.5" y="0.0" width="230" height="230"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCR-tS-SSy" userLabel="Inner Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="33" width="133" height="133"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ti-VT-L73">
-                                                        <rect key="frame" x="42.5" y="56" width="48" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="2Ti-VT-L73" firstAttribute="centerY" secondItem="ZCR-tS-SSy" secondAttribute="centerY" id="Rh0-9F-xBd"/>
-                                                    <constraint firstItem="2Ti-VT-L73" firstAttribute="centerX" secondItem="ZCR-tS-SSy" secondAttribute="centerX" id="ii8-tZ-hDE"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-Xz-G3Z">
+                                                <rect key="frame" x="86" y="101" width="58.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="height" secondItem="LzJ-50-h1p" secondAttribute="height" multiplier="2/3" id="a45-h0-Sqr"/>
-                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="centerX" secondItem="LzJ-50-h1p" secondAttribute="centerX" id="erz-sm-xOg"/>
-                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="centerY" secondItem="LzJ-50-h1p" secondAttribute="centerY" id="pWF-GD-GJ3"/>
-                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="width" secondItem="LzJ-50-h1p" secondAttribute="width" multiplier="2/3" id="qV6-N5-X6W"/>
+                                            <constraint firstItem="YSD-Xz-G3Z" firstAttribute="centerY" secondItem="LzJ-50-h1p" secondAttribute="centerY" id="2x4-Kh-Ufs"/>
+                                            <constraint firstAttribute="width" constant="230" id="Ja6-cA-FAa"/>
+                                            <constraint firstItem="YSD-Xz-G3Z" firstAttribute="centerX" secondItem="LzJ-50-h1p" secondAttribute="centerX" id="sGl-aa-H4h"/>
+                                            <constraint firstAttribute="height" constant="230" id="yCe-ul-FpM"/>
                                         </constraints>
                                     </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vte-oM-laD">
+                                        <rect key="frame" x="11.5" y="260" width="320" height="313"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Mec-Ca-KPR" id="BBB-dh-EDB"/>
+                                            <outlet property="delegate" destination="Mec-Ca-KPR" id="WBu-df-nls"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="height" secondItem="ejn-1M-PaK" secondAttribute="height" multiplier="2/3" id="7S2-is-aMd"/>
-                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="centerY" secondItem="ejn-1M-PaK" secondAttribute="centerY" id="DzB-Dz-xyj"/>
-                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="width" secondItem="ejn-1M-PaK" secondAttribute="width" multiplier="2/3" id="LjO-5o-E4D"/>
-                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="centerX" secondItem="ejn-1M-PaK" secondAttribute="centerX" id="TIj-Kd-OUt"/>
-                                    <constraint firstAttribute="height" constant="300" id="b9R-Nm-RPF"/>
-                                    <constraint firstAttribute="width" constant="300" id="drX-Ja-1MY"/>
-                                </constraints>
-                            </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vte-oM-laD">
-                                <rect key="frame" x="16" y="483.5" width="343" height="139.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Mec-Ca-KPR" id="BBB-dh-EDB"/>
-                                    <outlet property="delegate" destination="Mec-Ca-KPR" id="WBu-df-nls"/>
-                                </connections>
-                            </pickerView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ejn-1M-PaK" firstAttribute="centerX" secondItem="Axs-kB-NV2" secondAttribute="centerX" id="58b-a2-9wV"/>
-                            <constraint firstItem="Vte-oM-laD" firstAttribute="top" secondItem="ejn-1M-PaK" secondAttribute="bottom" id="aAu-Lj-lBW"/>
-                            <constraint firstItem="Vte-oM-laD" firstAttribute="leading" secondItem="Axs-kB-NV2" secondAttribute="leadingMargin" id="lHt-s9-IDb"/>
-                            <constraint firstItem="KHg-2h-OoC" firstAttribute="top" secondItem="Vte-oM-laD" secondAttribute="bottom" id="pRA-9x-MTm"/>
-                            <constraint firstItem="ejn-1M-PaK" firstAttribute="centerY" secondItem="Axs-kB-NV2" secondAttribute="centerY" id="vp5-mJ-eDZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vte-oM-laD" secondAttribute="trailing" id="w63-TB-Soq"/>
+                            <constraint firstItem="svD-Sf-WpG" firstAttribute="leading" secondItem="Axs-kB-NV2" secondAttribute="leadingMargin" id="7Fr-0h-8dE"/>
+                            <constraint firstItem="svD-Sf-WpG" firstAttribute="top" secondItem="6cH-UV-fsl" secondAttribute="bottom" constant="30" id="fg2-50-uta"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="svD-Sf-WpG" secondAttribute="bottom" id="hon-Vf-YG5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="svD-Sf-WpG" secondAttribute="trailing" id="ryO-T9-v3n"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Results" id="HPd-EZ-354">
+                        <barButtonItem key="rightBarButtonItem" systemItem="redo" id="b8w-7M-VZL">
+                            <connections>
+                                <segue destination="Ios-Sw-54i" kind="unwind" unwindAction="unwindToMainView:" id="k9s-jP-erP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="innerCircle" destination="ZCR-tS-SSy" id="UM2-Oh-Z47"/>
                         <outlet property="middleCircle" destination="LzJ-50-h1p" id="E1j-9v-UfR"/>
-                        <outlet property="outerCircle" destination="ejn-1M-PaK" id="wAO-zy-4La"/>
-                        <outlet property="percentageLabel" destination="2Ti-VT-L73" id="m6x-GS-jz1"/>
+                        <outlet property="percentageLabel" destination="YSD-Xz-G3Z" id="g6h-ka-wHa"/>
                         <outlet property="pickerView" destination="Vte-oM-laD" id="bb5-wp-xaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSL-ah-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ios-Sw-54i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3000.8000000000002" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="3110" y="-546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cP5-uQ-Wxk">
