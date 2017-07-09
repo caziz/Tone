@@ -16,7 +16,6 @@ class CoreDataHelper {
     
     static func createEntry() -> Entry {
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedContext) as! Entry
-        
         return entry
     }
     
@@ -40,7 +39,7 @@ class CoreDataHelper {
             let results = try managedContext.fetch(fetchRequest)
             return results
         } catch let err as NSError {
-            print("Couldn't fetch all notes \(err)")
+            print("Couldn't fetch all entries: \(err)")
         }
         
         return []

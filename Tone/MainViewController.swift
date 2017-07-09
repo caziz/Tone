@@ -16,6 +16,10 @@ class MainViewController: UIViewController {
     
     var speechToText: SpeechToText?
     
+    @IBAction func unwindToMainView(_ segue: UIStoryboardSegue) {
+        
+    }
+    
     @IBAction func toggleRecording(_ sender: UIButton) {
         if isRecording {
             isRecording = false
@@ -34,8 +38,8 @@ class MainViewController: UIViewController {
                 // copy recorded text to new view controller
                 let entryViewController = segue.destination as! EntryViewController
                 entryViewController.recordedText = self.recordedText
-
             }
+            
         }
     }
     

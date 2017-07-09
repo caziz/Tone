@@ -10,9 +10,9 @@
 struct Constants {
     
     struct ToneAnalyzer {
-        static let username = "ac0aab1c-d91b-4ed5-9522-d85064e5bc27"
-        static let password = "Q7oVfvPqt0ZT"
-        static let version = "2017-06-07"
+        static let username = "d6793f1e-5626-4d79-9d82-633a40d71545"
+        static let password = "aEynbVajt2V5"
+        static let version = "2017-06-08"
     }
     
     struct SpeechToText {
@@ -22,6 +22,7 @@ struct Constants {
     
     struct Segue {
         static let showEntryView = "showEntryView"
+        static let showResultsView = "showResultsView"
     }
     
 }
