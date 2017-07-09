@@ -49,7 +49,7 @@ class EntryViewController: UIViewController {
         Entry.emotionalRange = tones["Emotional Range"] ?? 0
         Entry.extraversion = tones["Extraversion"] ?? 0
         Entry.fear = tones["Fear"] ?? 0
-        Entry.joy = tones["joy"] ?? 0
+        Entry.joy = tones["Joy"] ?? 0
         Entry.openness = tones["Openness"] ?? 0
         Entry.sadness = tones["Sadness"] ?? 0
         Entry.tentative = tones["Tentative"] ?? 0

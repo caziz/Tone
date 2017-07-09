@@ -143,11 +143,23 @@
                                     <constraint firstAttribute="width" constant="300" id="drX-Ja-1MY"/>
                                 </constraints>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vte-oM-laD">
+                                <rect key="frame" x="16" y="483.5" width="343" height="139.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mec-Ca-KPR" id="BBB-dh-EDB"/>
+                                    <outlet property="delegate" destination="Mec-Ca-KPR" id="WBu-df-nls"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ejn-1M-PaK" firstAttribute="centerX" secondItem="Axs-kB-NV2" secondAttribute="centerX" id="58b-a2-9wV"/>
+                            <constraint firstItem="Vte-oM-laD" firstAttribute="top" secondItem="ejn-1M-PaK" secondAttribute="bottom" id="aAu-Lj-lBW"/>
+                            <constraint firstItem="Vte-oM-laD" firstAttribute="leading" secondItem="Axs-kB-NV2" secondAttribute="leadingMargin" id="lHt-s9-IDb"/>
+                            <constraint firstItem="KHg-2h-OoC" firstAttribute="top" secondItem="Vte-oM-laD" secondAttribute="bottom" id="pRA-9x-MTm"/>
                             <constraint firstItem="ejn-1M-PaK" firstAttribute="centerY" secondItem="Axs-kB-NV2" secondAttribute="centerY" id="vp5-mJ-eDZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vte-oM-laD" secondAttribute="trailing" id="w63-TB-Soq"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -156,6 +168,7 @@
                         <outlet property="innerCircle" destination="ZCR-tS-SSy" id="UM2-Oh-Z47"/>
                         <outlet property="middleCircle" destination="LzJ-50-h1p" id="E1j-9v-UfR"/>
                         <outlet property="outerCircle" destination="ejn-1M-PaK" id="wAO-zy-4La"/>
+                        <outlet property="pickerView" destination="Vte-oM-laD" id="bb5-wp-xaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSL-ah-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
