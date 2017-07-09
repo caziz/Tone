@@ -15,6 +15,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var middleCircle: CircleGraphView!
     @IBOutlet weak var innerCircle: CircleGraphView!
     
+    @IBOutlet weak var percentageLabel: UILabel!
     var selectedRow = 0
 
     
@@ -49,6 +50,8 @@ class ResultsViewController: UIViewController {
         print("Entry Fear: \(Entry.fear)")
         print("Entry Joy: \(Entry.joy)")
         print("Entry Openness: \(Entry.openness)")
+        
+        percentageLabel.text = pickerView.selectedRow(inComponent: 0).description
 
     }
 
@@ -69,28 +72,40 @@ extension ResultsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch selectedRow {
         case 0:
+            percentageLabel.text = "\(100*Entry.anger)%"
             middleCircle.endArc = CGFloat(Entry.anger)
         case 1:
+            percentageLabel.text = "\(100*Entry.disgust)%"
             middleCircle.endArc = CGFloat(Entry.disgust)
         case 2:
+            percentageLabel.text = "\(100*Entry.fear)%"
             middleCircle.endArc = CGFloat(Entry.fear)
         case 3:
+            percentageLabel.text = "\(100*Entry.joy)%"
             middleCircle.endArc = CGFloat(Entry.joy)
         case 4:
+            percentageLabel.text = "\(100*Entry.sadness)%"
             middleCircle.endArc = CGFloat(Entry.sadness)
         case 5:
+            percentageLabel.text = "\(100*Entry.openness)%"
             middleCircle.endArc = CGFloat(Entry.openness)
         case 6:
+            percentageLabel.text = "\(100*Entry.conscientiousness)%"
             middleCircle.endArc = CGFloat(Entry.conscientiousness)
         case 7:
+            percentageLabel.text = "\(100*Entry.extraversion)%"
             middleCircle.endArc = CGFloat(Entry.extraversion)
         case 8:
+            percentageLabel.text = "\(100*Entry.agreeableness)%"
             middleCircle.endArc = CGFloat(Entry.agreeableness)
         case 9:
+            percentageLabel.text = "\(100*Entry.confident)%"
             middleCircle.endArc = CGFloat(Entry.confident)
         case 10:
+            percentageLabel.text = "\(100*Entry.tentative)%"
             middleCircle.endArc = CGFloat(Entry.tentative)
         case 11:
+            percentageLabel.text = "\(100*Entry.analytical)%"
             middleCircle.endArc = CGFloat(Entry.analytical)
         default:
             break
@@ -99,7 +114,7 @@ extension ResultsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.textColor = UIColor.white
+        pickerLabel.textColor = UIColor.black
         switch row {
         case 0:
             pickerLabel.text = "Anger"

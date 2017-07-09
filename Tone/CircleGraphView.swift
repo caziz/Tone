@@ -17,7 +17,7 @@ class CircleGraphView: UIView {
     }
     var arcWidth:CGFloat = 10.0
     var arcColor = UIColor.yellow
-    var arcBackgroundColor = UIColor.black
+    var arcBackgroundColor = UIColor.white
     
     override func draw(_ rect: CGRect) {
         

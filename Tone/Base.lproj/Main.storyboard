@@ -121,7 +121,18 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCR-tS-SSy" userLabel="Inner Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
                                                 <rect key="frame" x="33" y="33" width="133" height="133"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ti-VT-L73">
+                                                        <rect key="frame" x="42.5" y="56" width="48" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="2Ti-VT-L73" firstAttribute="centerY" secondItem="ZCR-tS-SSy" secondAttribute="centerY" id="Rh0-9F-xBd"/>
+                                                    <constraint firstItem="2Ti-VT-L73" firstAttribute="centerX" secondItem="ZCR-tS-SSy" secondAttribute="centerX" id="ii8-tZ-hDE"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,14 +156,14 @@
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vte-oM-laD">
                                 <rect key="frame" x="16" y="483.5" width="343" height="139.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Mec-Ca-KPR" id="BBB-dh-EDB"/>
                                     <outlet property="delegate" destination="Mec-Ca-KPR" id="WBu-df-nls"/>
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ejn-1M-PaK" firstAttribute="centerX" secondItem="Axs-kB-NV2" secondAttribute="centerX" id="58b-a2-9wV"/>
                             <constraint firstItem="Vte-oM-laD" firstAttribute="top" secondItem="ejn-1M-PaK" secondAttribute="bottom" id="aAu-Lj-lBW"/>
@@ -168,6 +179,7 @@
                         <outlet property="innerCircle" destination="ZCR-tS-SSy" id="UM2-Oh-Z47"/>
                         <outlet property="middleCircle" destination="LzJ-50-h1p" id="E1j-9v-UfR"/>
                         <outlet property="outerCircle" destination="ejn-1M-PaK" id="wAO-zy-4La"/>
+                        <outlet property="percentageLabel" destination="2Ti-VT-L73" id="m6x-GS-jz1"/>
                         <outlet property="pickerView" destination="Vte-oM-laD" id="bb5-wp-xaB"/>
                     </connections>
                 </viewController>
