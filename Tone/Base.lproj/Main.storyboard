@@ -7,10 +7,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recording-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +42,7 @@
                             <constraint firstItem="fyc-Jh-3xq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vth-av-oXf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recording" id="eYD-79-K1d"/>
+                    <navigationItem key="navigationItem" title="Record" id="eYD-79-K1d"/>
                     <connections>
                         <segue destination="IwE-YX-b08" kind="show" identifier="showEntryView" id="0Pd-tu-aLp"/>
                     </connections>
@@ -66,7 +67,7 @@
                                 <rect key="frame" x="16" y="0.0" width="343" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -112,18 +113,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMX-2D-bcg">
-                                <rect key="frame" x="118" y="141" width="139" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-1M-PaK" userLabel="Outer Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzJ-50-h1p" userLabel="Middle Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="50" width="200" height="200"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCR-tS-SSy" userLabel="Inner Circle" customClass="CircleGraphView" customModule="Tone" customModuleProvider="target">
+                                                <rect key="frame" x="33" y="33" width="133" height="133"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="height" secondItem="LzJ-50-h1p" secondAttribute="height" multiplier="2/3" id="a45-h0-Sqr"/>
+                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="centerX" secondItem="LzJ-50-h1p" secondAttribute="centerX" id="erz-sm-xOg"/>
+                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="centerY" secondItem="LzJ-50-h1p" secondAttribute="centerY" id="pWF-GD-GJ3"/>
+                                            <constraint firstItem="ZCR-tS-SSy" firstAttribute="width" secondItem="LzJ-50-h1p" secondAttribute="width" multiplier="2/3" id="qV6-N5-X6W"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="height" secondItem="ejn-1M-PaK" secondAttribute="height" multiplier="2/3" id="7S2-is-aMd"/>
+                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="centerY" secondItem="ejn-1M-PaK" secondAttribute="centerY" id="DzB-Dz-xyj"/>
+                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="width" secondItem="ejn-1M-PaK" secondAttribute="width" multiplier="2/3" id="LjO-5o-E4D"/>
+                                    <constraint firstItem="LzJ-50-h1p" firstAttribute="centerX" secondItem="ejn-1M-PaK" secondAttribute="centerX" id="TIj-Kd-OUt"/>
+                                    <constraint firstAttribute="height" constant="300" id="b9R-Nm-RPF"/>
+                                    <constraint firstAttribute="width" constant="300" id="drX-Ja-1MY"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ejn-1M-PaK" firstAttribute="centerX" secondItem="Axs-kB-NV2" secondAttribute="centerX" id="58b-a2-9wV"/>
+                            <constraint firstItem="ejn-1M-PaK" firstAttribute="centerY" secondItem="Axs-kB-NV2" secondAttribute="centerY" id="vp5-mJ-eDZ"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="resultsLabel" destination="HMX-2D-bcg" id="S5R-DW-7rs"/>
+                        <outlet property="innerCircle" destination="LzJ-50-h1p" id="dUy-Mz-MVH"/>
+                        <outlet property="middleCircle" destination="LzJ-50-h1p" id="E1j-9v-UfR"/>
+                        <outlet property="outerCircle" destination="ejn-1M-PaK" id="wAO-zy-4La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSL-ah-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>

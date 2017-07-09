@@ -18,13 +18,16 @@ class Entry {
     static var fear: Double = 0.0
     static var joy: Double = 0.0
     static var sadness: Double = 0.0
+    
     static var analytical: Double = 0.0
     static var confident: Double = 0.0
     static var tentative: Double = 0.0
+    
     static var openness: Double = 0.0
     static var conscientiousness: Double = 0.0
     static var extraversion: Double = 0.0
     static var agreeableness: Double = 0.0
+   
     static var emotionalRange: Double = 0.0
 
 }
