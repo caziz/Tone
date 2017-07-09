@@ -22,18 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-YM-h2m">
-                                <rect key="frame" x="107" y="318" width="160" height="30"/>
-                                <state key="normal" title="Record/Stop Recording"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-ec-UJh">
+                                <rect key="frame" x="34" y="180.5" width="306" height="306"/>
+                                <state key="normal" title="" backgroundImage="mic"/>
                                 <connections>
-                                    <action selector="toggleRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRB-Bv-fEG"/>
+                                    <action selector="toggleRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffv-kH-MzZ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-Jh-3xq">
+                                <rect key="frame" x="46.5" y="194" width="281" height="279"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bRN-YM-h2m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QLE-lK-ndH"/>
-                            <constraint firstItem="bRN-YM-h2m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qyA-Sv-3Tj"/>
+                            <constraint firstItem="iUl-ec-UJh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YT2-Qe-f7f"/>
+                            <constraint firstItem="iUl-ec-UJh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aYs-Gp-mOZ"/>
+                            <constraint firstItem="fyc-Jh-3xq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nVw-ye-NtH"/>
+                            <constraint firstItem="fyc-Jh-3xq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vth-av-oXf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recording" id="eYD-79-K1d"/>
@@ -43,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="-546"/>
+            <point key="canvasLocation" x="1212" y="-546.47676161919048"/>
         </scene>
         <!--Text-->
         <scene sceneID="sgm-aP-FqP">
@@ -74,22 +79,64 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Text" id="mMj-ud-4il">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mNj-BQ-XQk"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="URM-Mv-6qX"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mNj-BQ-XQk">
+                            <connections>
+                                <segue destination="a8Y-CD-gVb" kind="unwind" unwindAction="unwindToMainView:" id="D4Y-aG-KiM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="URM-Mv-6qX">
+                            <connections>
+                                <action selector="saveEntry:" destination="IwE-YX-b08" id="tgZ-gv-Bwy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="SLg-WH-oFI" id="BCf-Qi-zIe"/>
+                        <segue destination="Mec-Ca-KPR" kind="show" identifier="showResultsView" id="r3U-7z-xFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szO-l3-ADu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="a8Y-CD-gVb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2154" y="-546"/>
         </scene>
-        <!--Record-->
+        <!--Results View Controller-->
+        <scene sceneID="P5Z-d8-BEU">
+            <objects>
+                <viewController id="Mec-Ca-KPR" customClass="ResultsViewController" customModule="Tone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6cH-UV-fsl"/>
+                        <viewControllerLayoutGuide type="bottom" id="KHg-2h-OoC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Axs-kB-NV2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMX-2D-bcg">
+                                <rect key="frame" x="118" y="141" width="139" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultsLabel" destination="HMX-2D-bcg" id="Qpn-i5-7og"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSL-ah-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3000.8000000000002" y="-546.47676161919048"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="cP5-uQ-Wxk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ifm-jB-jtv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Record" id="gEv-QE-yKR"/>
+                    <tabBarItem key="tabBarItem" title="" image="add" id="gEv-QE-yKR">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LHz-jJ-XxL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -104,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="280.80000000000001" y="-545.57721139430294"/>
         </scene>
-        <!--Profile-->
+        <!--View Controller-->
         <scene sceneID="Mcv-WK-NlN">
             <objects>
                 <viewController id="o11-Cd-7s2" sceneMemberID="viewController">
@@ -117,7 +164,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Ziw-KQ-VQa"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="Ziw-KQ-VQa">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUU-GA-mj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,4 +202,10 @@
             <point key="canvasLocation" x="281" y="-1305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="26" height="26"/>
+        <image name="circle" width="281" height="279"/>
+        <image name="mic" width="306" height="306"/>
+        <image name="profile" width="25" height="25"/>
+    </resources>
 </document>

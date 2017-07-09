@@ -13,6 +13,8 @@
 		5A0AE0C51F1157A200FF3BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0AE0C41F1157A200FF3BE3 /* Assets.xcassets */; };
 		5A0AE0C81F1157A200FF3BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0AE0C61F1157A200FF3BE3 /* LaunchScreen.storyboard */; };
 		5A0AE0D21F1158FD00FF3BE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AE0D11F1158FD00FF3BE3 /* MainViewController.swift */; };
+		5A8268221F11ADD900483B1D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8268211F11ADD900483B1D /* ResultsViewController.swift */; };
+		5A8268241F11B1A300483B1D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8268231F11B1A300483B1D /* Date.swift */; };
 		5A8E6B081F115B6100E9D805 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B071F115B6100E9D805 /* Constants.swift */; };
 		5A8E6B0D1F115CD500E9D805 /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B0C1F115CD500E9D805 /* ToneAnalyzerV3.framework */; };
 		5A8E6B0F1F115CE800E9D805 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E6B0E1F115CE800E9D805 /* RestKit.framework */; };
@@ -36,6 +38,8 @@
 		5A0AE0C71F1157A200FF3BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0AE0C91F1157A200FF3BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0AE0D11F1158FD00FF3BE3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5A8268211F11ADD900483B1D /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		5A8268231F11B1A300483B1D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5A8E6B071F115B6100E9D805 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5A8E6B0C1F115CD500E9D805 /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
 		5A8E6B0E1F115CE800E9D805 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				5A0AE0D11F1158FD00FF3BE3 /* MainViewController.swift */,
 				5A8E6B111F115E1300E9D805 /* EntryViewController.swift */,
+				5A8268211F11ADD900483B1D /* ResultsViewController.swift */,
 				90A1D3BC1F11AE48003F4698 /* CalendarViewController.swift */,
 			);
 			name = Controller;
@@ -148,6 +153,7 @@
 		90A1D3B01F1178BF003F4698 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5A8268231F11B1A300483B1D /* Date.swift */,
 				90A1D3BE1F11BFAD003F4698 /* UIColor+Utility.swift */,
 			);
 			name = Extensions;
@@ -212,7 +218,7 @@
 				TargetAttributes = {
 					5A0AE0B61F1157A200FF3BE3 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = EP435FJL2Z;
+						DevelopmentTeam = M96W5MC8C2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -284,6 +290,8 @@
 				90A1D3BD1F11AE48003F4698 /* CalendarViewController.swift in Sources */,
 				5A0AE0C31F1157A200FF3BE3 /* Tone.xcdatamodeld in Sources */,
 				5A8E6B081F115B6100E9D805 /* Constants.swift in Sources */,
+				5A8268241F11B1A300483B1D /* Date.swift in Sources */,
+				5A8268221F11ADD900483B1D /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,12 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EP435FJL2Z;
+				DEVELOPMENT_TEAM = M96W5MC8C2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.caziz.Tone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,12 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EP435FJL2Z;
+				DEVELOPMENT_TEAM = M96W5MC8C2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.caziz.Tone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
