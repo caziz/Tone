@@ -12,8 +12,6 @@ import SpeechToTextV1
 class MainViewController: UIViewController {
 
     var isRecording = false
-    var recordedText: String?
-    
     var speechToText: SpeechToText?
     
     @IBAction func unwindToMainView(_ segue: UIStoryboardSegue) {
@@ -32,43 +30,15 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == Constants.Segue.showEntryView {
-                // copy recorded text to new view controller
-                let entryViewController = segue.destination as! EntryViewController
-                entryViewController.recordedText = self.recordedText
-            }
-            
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 
 extension MainViewController {
-    
     // constantly updates recordedText with speech
     func startListening() {
         speechToText = SpeechToText(username: Constants.SpeechToText.username, password: Constants.SpeechToText.password)
@@ -77,10 +47,9 @@ extension MainViewController {
         settings.interimResults = true
         let failure = { (error: Error) in print(error) }
         speechToText?.recognizeMicrophone(settings: settings, failure: failure) { results in
-            self.recordedText = results.bestTranscript
-            print(results.bestTranscript)
+            Entry.text = results.bestTranscript
+            Entry.textReceived = true
         }
-
     }
     
     // resets recorder

@@ -12,73 +12,46 @@ import ToneAnalyzerV3
 
 class EntryViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
-
-    var recordedText: String?
-    var tones = [String : Double]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = recordedText
-        print(textView.text)
+        while(!Entry.textReceived) {}
+        textView.text = Entry.text
     }
     @IBAction func saveEntry(_ sender: Any) {
-        if textView.text != "" {
-            saveTones(recordedText: textView.text)
+            getTones(recordedText: textView.text)
             performSegue(withIdentifier: Constants.Segue.showResultsView, sender: self)
-        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == Constants.Segue.showResultsView {
-                
-                print("segue")
-                // copy tones to new view controller
-                let resultsViewController = segue.destination as! ResultsViewController
-                resultsViewController.tones = self.tones
-                for tone in tones {
-                    resultsViewController.resultsLabel.text = ("results: \(tone.key): \(tone.value)\n")
-                }
-            }
-            
-        }
-    }
-    
-    func saveTones(recordedText: String) {
+    func getTones(recordedText: String) {
         // access IBM ToneAnalyzer API, call saveAndSeeResults
         let toneAnalyzer = ToneAnalyzer(username: Constants.ToneAnalyzer.username, password: Constants.ToneAnalyzer.password, version: Constants.ToneAnalyzer.version)
         let failure = { (error: Error) in print(error) }
         toneAnalyzer.getTone(ofText: recordedText, failure: failure) { result in
+            var tones : [String : Double] = [:]
             for type in result.documentTone {
                 for tone in type.tones {
-                    self.tones[tone.name] = tone.score
-                    print(tone.name)
-                    print(tone.score)
+                    tones[tone.name] = tone.score
                 }
             }
-            self.saveToCoreData(tones: self.tones)
+            self.saveTones(tones: tones)
         }
     }
     
-    func saveToCoreData(tones: [String : Double]) {
-        // save entry to core data
-        let entry = CoreDataHelper.createEntry()
-        entry.date = Date() as NSDate
-        entry.text = recordedText
-        entry.agreeableness = tones["Agreeableness"] ?? 0
-        entry.analytical = tones["Analytical"] ?? 0
-        entry.anger = tones["Anger"] ?? 0
-        entry.confident = tones["Confident"] ?? 0
-        entry.conscientiousness = tones["Conscientiousness"] ?? 0
-        entry.disgust = tones["Disgust"] ?? 0
-        entry.emotionalRange = tones["Emotional Range"] ?? 0
-        entry.extraversion = tones["Extraversion"] ?? 0
-        entry.fear = tones["Fear"] ?? 0
-        entry.joy = tones["joy"] ?? 0
-        entry.openness = tones["Openness"] ?? 0
-        entry.sadness = tones["Sadness"] ?? 0
-        entry.tentative = tones["Tentative"] ?? 0
-        CoreDataHelper.saveEntry()
-        
+    func saveTones(tones: [String : Double]) {
+        Entry.agreeableness = tones["Agreeableness"] ?? 0
+        Entry.analytical = tones["Analytical"] ?? 0
+        Entry.anger = tones["Anger"] ?? 0
+        Entry.confident = tones["Confident"] ?? 0
+        Entry.conscientiousness = tones["Conscientiousness"] ?? 0
+        Entry.disgust = tones["Disgust"] ?? 0
+        Entry.emotionalRange = tones["Emotional Range"] ?? 0
+        Entry.extraversion = tones["Extraversion"] ?? 0
+        Entry.fear = tones["Fear"] ?? 0
+        Entry.joy = tones["joy"] ?? 0
+        Entry.openness = tones["Openness"] ?? 0
+        Entry.sadness = tones["Sadness"] ?? 0
+        Entry.tentative = tones["Tentative"] ?? 0
+        Entry.tonesReceived = true
     }
 }

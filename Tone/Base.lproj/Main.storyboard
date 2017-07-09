@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iaj-6Y-eny">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ifm-jB-jtv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SLg-WH-oFI">
-                                <rect key="frame" x="16" y="0.0" width="343" height="618"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -84,7 +84,7 @@
                                 <segue destination="a8Y-CD-gVb" kind="unwind" unwindAction="unwindToMainView:" id="D4Y-aG-KiM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="URM-Mv-6qX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="URM-Mv-6qX">
                             <connections>
                                 <action selector="saveEntry:" destination="IwE-YX-b08" id="tgZ-gv-Bwy"/>
                             </connections>
@@ -151,61 +151,10 @@
             </objects>
             <point key="canvasLocation" x="280.80000000000001" y="-545.57721139430294"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Mcv-WK-NlN">
-            <objects>
-                <viewController id="o11-Cd-7s2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hxj-s2-kNl"/>
-                        <viewControllerLayoutGuide type="bottom" id="96N-a1-d4d"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v4d-1S-eDy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="profile" id="Ziw-KQ-VQa">
-                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zUU-GA-mj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="281" y="269"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="4JQ-aX-YuH">
-            <objects>
-                <tabBarController id="Iaj-6Y-eny" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="UBV-4i-R4K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="IZf-HB-CD4" kind="relationship" relationship="viewControllers" id="JX8-8x-5Yh"/>
-                        <segue destination="Ifm-jB-jtv" kind="relationship" relationship="viewControllers" id="18Z-Xv-XXl"/>
-                        <segue destination="o11-Cd-7s2" kind="relationship" relationship="viewControllers" id="Rzo-VX-OCk"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mMx-6l-SQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-850" y="-582"/>
-        </scene>
-        <!--Calendar-->
-        <scene sceneID="5cd-Gq-5km">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="IZf-HB-CD4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="e2O-OU-XGY"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Gd-bH-sjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="281" y="-1305"/>
-        </scene>
     </scenes>
     <resources>
         <image name="add" width="26" height="26"/>
         <image name="circle" width="281" height="279"/>
         <image name="mic" width="306" height="306"/>
-        <image name="profile" width="25" height="25"/>
     </resources>
 </document>
