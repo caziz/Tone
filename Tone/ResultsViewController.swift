@@ -11,9 +11,7 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var outerCircle: CircleGraphView!
     @IBOutlet weak var middleCircle: CircleGraphView!
-    @IBOutlet weak var innerCircle: CircleGraphView!
     
     @IBOutlet weak var percentageLabel: UILabel!
     var selectedRow = 0
@@ -24,20 +22,10 @@ class ResultsViewController: UIViewController {
         while(!Entry.tonesReceived) {}
         Entry.tonesReceived = false
         let backgroundTrackColor = UIColor(white: 0.15, alpha: 1.0)
-        /*
-        outerCircle.arcBackgroundColor = backgroundTrackColor
-        outerCircle.arcWidth = 20.0
-        outerCircle.arcColor = UIColor.yellow
-         */
         
         middleCircle.arcWidth = 20.0
         middleCircle.arcColor = UIColor.blue
         middleCircle.arcBackgroundColor = backgroundTrackColor
-        /*
-        innerCircle.arcColor = UIColor.red
-        innerCircle.arcWidth = 20.0
-        innerCircle.arcBackgroundColor = backgroundTrackColor
-        */
         
         print("Entry Analytical: \(Entry.analytical)")
         print("Entry Agreeableness: \(Entry.agreeableness)")
@@ -72,41 +60,57 @@ extension ResultsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch selectedRow {
         case 0:
-            percentageLabel.text = "\(100*Entry.anger)%"
+            percentageLabel.text = "\(Int(100*Entry.anger))%"
             middleCircle.endArc = CGFloat(Entry.anger)
+            middleCircle.arcColor = UIColor.red
+
         case 1:
-            percentageLabel.text = "\(100*Entry.disgust)%"
+            percentageLabel.text = "\(Int(100*Entry.disgust))%"
             middleCircle.endArc = CGFloat(Entry.disgust)
+            middleCircle.arcColor = UIColor.green
+
         case 2:
-            percentageLabel.text = "\(100*Entry.fear)%"
+            percentageLabel.text = "\(Int(100*Entry.fear))%"
             middleCircle.endArc = CGFloat(Entry.fear)
+            middleCircle.arcColor = UIColor.purple
+
         case 3:
-            percentageLabel.text = "\(100*Entry.joy)%"
+            percentageLabel.text = "\(Int(100*Entry.joy))%"
             middleCircle.endArc = CGFloat(Entry.joy)
+            middleCircle.arcColor = UIColor.yellow
         case 4:
-            percentageLabel.text = "\(100*Entry.sadness)%"
+            percentageLabel.text = "\(Int(100*Entry.sadness))%"
             middleCircle.endArc = CGFloat(Entry.sadness)
+            middleCircle.arcColor = UIColor.blue
         case 5:
-            percentageLabel.text = "\(100*Entry.openness)%"
+            percentageLabel.text = "\(Int(100*Entry.openness))%"
             middleCircle.endArc = CGFloat(Entry.openness)
+            middleCircle.arcColor = UIColor.orange
+
         case 6:
-            percentageLabel.text = "\(100*Entry.conscientiousness)%"
+            percentageLabel.text = "\(Int(100*Entry.conscientiousness))%"
             middleCircle.endArc = CGFloat(Entry.conscientiousness)
+            middleCircle.arcColor = UIColor.cyan
         case 7:
-            percentageLabel.text = "\(100*Entry.extraversion)%"
+            percentageLabel.text = "\(Int(100*Entry.extraversion))%"
             middleCircle.endArc = CGFloat(Entry.extraversion)
+            middleCircle.arcColor = UIColor.orange
         case 8:
-            percentageLabel.text = "\(100*Entry.agreeableness)%"
+            percentageLabel.text = "\(Int(100*Entry.agreeableness))%"
             middleCircle.endArc = CGFloat(Entry.agreeableness)
+            middleCircle.arcColor = UIColor.yellow
         case 9:
-            percentageLabel.text = "\(100*Entry.confident)%"
+            percentageLabel.text = "\(Int(100*Entry.confident))%"
             middleCircle.endArc = CGFloat(Entry.confident)
+            middleCircle.arcColor = UIColor.red
         case 10:
-            percentageLabel.text = "\(100*Entry.tentative)%"
+            percentageLabel.text = "\(Int(100*Entry.tentative))%"
             middleCircle.endArc = CGFloat(Entry.tentative)
+            middleCircle.arcColor = UIColor.cyan
         case 11:
-            percentageLabel.text = "\(100*Entry.analytical)%"
+            percentageLabel.text = "\(Int(100*Entry.analytical))%"
             middleCircle.endArc = CGFloat(Entry.analytical)
+            middleCircle.arcColor = UIColor.brown
         default:
             break
         }
