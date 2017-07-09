@@ -44,6 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="eYD-79-K1d"/>
                     <connections>
+                        <outlet property="recordButton" destination="iUl-ec-UJh" id="wjg-KX-uZG"/>
                         <segue destination="IwE-YX-b08" kind="show" identifier="showEntryView" id="0Pd-tu-aLp"/>
                     </connections>
                 </viewController>

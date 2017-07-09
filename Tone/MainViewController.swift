@@ -14,11 +14,20 @@ class MainViewController: UIViewController {
     var isRecording = false
     var speechToText: SpeechToText?
     
+    @IBOutlet weak var recordButton: UIButton!
     @IBAction func unwindToMainView(_ segue: UIStoryboardSegue) {
         
     }
     
     @IBAction func toggleRecording(_ sender: UIButton) {
+        
+        self.recordButton.setImage(UIImage(named: "mic2"), for: .selected)
+        
+        let bounds = self.recordButton.bounds
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
+            self.recordButton.bounds = CGRect(x: bounds.origin.x - 20, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height)
+        }, completion: nil)
+        
         if isRecording {
             isRecording = false
             stopListening()
