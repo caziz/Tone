@@ -175,7 +175,9 @@
                             <constraint firstItem="1AP-88-ovD" firstAttribute="top" secondItem="VRi-Tf-Rpv" secondAttribute="bottom" id="nmY-zv-3nP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="gvl-ro-8IK"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" id="gvl-ro-8IK">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="VJh-Sh-2XH" id="cBj-pD-3xY"/>
@@ -188,4 +190,7 @@
             <point key="canvasLocation" x="280.80000000000001" y="-1305.697151424288"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="24" height="24"/>
+    </resources>
 </document>

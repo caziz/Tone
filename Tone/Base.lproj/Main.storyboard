@@ -123,7 +123,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="resultsLabel" destination="HMX-2D-bcg" id="Qpn-i5-7og"/>
+                        <outlet property="resultsLabel" destination="HMX-2D-bcg" id="S5R-DW-7rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSL-ah-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>

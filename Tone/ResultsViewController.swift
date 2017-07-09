@@ -15,11 +15,11 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        resultsLabel.text = "results:\n"
+        while(true) {
+            resultsLabel.text = String(describing: tones.count)
+        }
         
-//        for tone in tones {
-//            resultsLabel.text = ("\(resultsLabel.text) \(tone.key): \(tone.value)\n")
-//        }
+        
         for _ in CoreDataHelper.retrieveAllEntries() {
             print("PULLED FROM CORE DATA")
         }
