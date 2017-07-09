@@ -14,9 +14,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        while(!Entry.tonesReceived) {
-            resultsLabel.text = String(Entry.agreeableness)
-        }
+        while(!Entry.tonesReceived) {}
+        Entry.tonesReceived = false
         resultsLabel.text = String(Entry.agreeableness)
 
         

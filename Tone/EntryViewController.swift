@@ -16,6 +16,7 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         while(!Entry.textReceived) {}
+        Entry.textReceived = false
         textView.text = Entry.text
     }
     @IBAction func saveEntry(_ sender: Any) {
